@@ -1,0 +1,144 @@
+.item {
+    flex-basis: calc((100% / 2) - 16px);
+    position: relative; /* Для позиционирования псевдоэлемента */
+    overflow: hidden; /* Скрываем лишнее */
+}
+
+.item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid transparent; /* Начальное состояние границы */
+    transition: border-color 0.3s ease; /* Переход для цвета границы */
+    z-index: 1; /* Поднимаем псевдоэлемент над контентом */
+}
+
+.item:hover::before {
+    border-color: rgba(0, 153, 255, 0.5); /* Цвет границы при наведении */
+}
+
+.cardIcon, .cardTriangleIcon, .cardBigSquareIcon, .cardSmSquareIcon {
+
+    position: relative;
+    width: 140px;
+    height: 140px;
+    
+}
+/* Общие стили для иконок */
+.icon::before,
+.icon::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 140px;
+    max-height: 140px;
+    transition: opacity 0.3s ease, background 0.3s ease;
+}
+
+.cardIcon::before {
+    background: no-repeat url("~/shared/assets/Home/svgs/circle-within-circle.svg") center center / contain;
+}
+
+.cardIcon::after {
+    opacity: 0;
+    background: no-repeat url("~/shared/assets/Home/svgs/circle-within-circle-hover.svg") center center / contain;
+}
+
+.cardTriangleIcon::before {
+    background: no-repeat url("~/shared/assets/Home/svgs/triangle-in-circle.svg") center center / contain;
+}
+
+.cardTriangleIcon::after {
+    opacity: 0;
+    background: no-repeat url("~/shared/assets/Home/svgs/triangle-in-circle-hover.svg") center center / contain;
+
+}
+
+.cardBigSquareIcon::before {
+    background: no-repeat url("~/shared/assets/Home/svgs/circle-in-square.svg") center center / contain;
+}
+
+.cardBigSquareIcon::after {
+    opacity: 0;
+    background: no-repeat url("~/shared/assets/Home/svgs/circle-in-square-hover.svg") center center / contain;
+}
+
+.cardSmSquareIcon::before {
+    background: no-repeat url("~/shared/assets/Home/svgs/square-in-circle.svg") center center / contain;
+}
+
+.cardSmSquareIcon::after {
+    opacity: 0;
+    background: no-repeat url("~/shared/assets/Home/svgs/square-in-circle-hover.svg") center center / contain;
+}
+
+/* Эффекты при наведении */
+.item:hover .cardIcon::after,
+.item:hover .cardSmSquareIcon::after,
+.item:hover .cardBigSquareIcon::after,
+.item:hover .cardTriangleIcon::after {
+    opacity: 1;
+}
+
+.item:hover .cardIcon::before,
+.item:hover .cardSmSquareIcon::before,
+.item:hover .cardBigSquareIcon::before,
+.item:hover .cardTriangleIcon::before {
+    opacity: 0;
+}
+
+/* Остальные стили для анимации волны */
+.animationWrappWave {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+}
+
+.animationWrappWave::after {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 0%;
+    background: linear-gradient(90deg, rgba(0, 153, 255, 0.1), rgba(102, 16, 242, 0.1));
+    transition: width 1s ease;
+    z-index: -1;
+}
+
+.waveItem {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.animationWrappWave.hover::after {
+    width: 100%;
+}
+
+.animationWrappWave.hover .waveItem {
+    animation: wave 0.6s ease-in-out forwards;
+    animation-delay: calc(var(--index) * 0.1s);
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0) translateX(0px);
+    }
+    50% {
+        transform: translateY(-24px);
+    }
+    51% {
+        transform: translateY(34px) translateX(100px);
+    }
+    52% {
+        transform: translateY(34px) translateX(0px);
+    }
+}

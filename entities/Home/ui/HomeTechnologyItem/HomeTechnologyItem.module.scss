@@ -1,0 +1,23 @@
+
+@keyframes anim-dflt {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.anim {
+    opacity: 0;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+.anim.animated {
+    animation-name: anim-dflt;
+    animation-delay: var(--delay);
+}
+

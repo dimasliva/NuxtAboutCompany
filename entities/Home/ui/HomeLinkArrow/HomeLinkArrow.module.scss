@@ -1,0 +1,19 @@
+
+.animate {
+    animation: moveIcon 0.5s forwards;
+}
+
+@keyframes moveIcon {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(40px, -40px);
+    }
+    51% {
+        transform: translate(-40px, 40px);
+    }
+    100% {
+        transform: translate(-0px, 0px);
+    }
+}
