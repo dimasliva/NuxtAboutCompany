@@ -1,8 +1,6 @@
 <template>
-<div class="flex flex-col items-center gap-10 pt-[15rem]">
-    <div class="text-5xl">
-        Технологии которые мы используем.
-    </div>
+<div class="flex flex-col pt-[15rem]">
+    <EntityHomeUiHomeSectionTitle  title="Технологии которые мы используем."/>
     <FeatureHomeUiHomeTechnologyItems/>
 </div>
 </template>

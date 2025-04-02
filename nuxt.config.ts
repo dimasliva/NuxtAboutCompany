@@ -12,6 +12,7 @@ export default defineNuxtConfig({
 
   ],
 
+  css: ['~/shared/assets/styles/global.scss'],
 
   hooks: {
     'vite:extendConfig': (config) => {

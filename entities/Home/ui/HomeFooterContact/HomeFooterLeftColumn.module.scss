@@ -1,0 +1,7 @@
+.item {
+	transition: opacity 0.3s, transform 0.3s;
+}
+.itemHover {
+	opacity: 0.8 ;
+	transform: scale(0.9);
+}

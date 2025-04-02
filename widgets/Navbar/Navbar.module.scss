@@ -1,0 +1,203 @@
+.header {
+    width: 100%;
+    padding: 3rem 0;
+    position: fixed;
+    top: 0;
+    z-index: 12;
+    pointer-events: none;
+    transition: transform 0.5s ease;
+}
+.wrapper {
+    width: 100%;
+    padding: 0 2.4rem;
+    margin: 0 auto;
+}
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+.logo {
+    width: 12rem;
+    pointer-events: initial;
+    color: #ffffff;
+    text-decoration: none;
+}
+.menu {
+    position: relative;
+    pointer-events: initial;
+}
+.menuTrigger.active {
+    border-color: transparent;
+}
+.menuTrigger {
+    display: flex;
+    align-items: center;
+    padding: 0.4rem 1.5rem;
+    border: 0.1rem solid #0FF;
+    border-radius: 0.8rem;
+    background: #121215;
+    font-weight: 500;
+    font-size: 1.0rem;
+    text-transform: uppercase;
+    color: #06ffff;
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    --lines-height: 0.1rem;
+    --lines-gap: 0.5rem;
+}
+.triggerLines {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 2.0rem;
+    cursor: pointer;
+    gap: var(--lines-gap);
+}
+.triggerLine {
+    display: block;
+    width: 100%;
+    height: var(--lines-height);
+    background: currentColor;
+    position: relative;
+    transform-origin: 50% 50%;
+    transition: transform 0.3s;
+    border-radius: 1rem;
+}
+.menuTrigger.active .triggerLines .triggerLineOne {
+    transform: translate3d(0, calc(var(--lines-height) / 2 + var(--lines-gap) / 2), 0) rotate(45deg);
+}
+
+.menuTrigger.active .triggerLines .triggerLineTwo {
+    transform: translate3d(0, calc((var(--lines-height) / 2 + var(--lines-gap) / 2)* -1), 0) rotate(-45deg);
+}
+.header__nav {
+    width: 460px;
+    padding: 6rem 2rem 3rem;
+    border-radius: 0.8rem;
+    position: absolute;
+    background-color: #121215;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    pointer-events: none;
+    transition: 0.3s ease-out;
+    clip-path: inset(0% 0rem 100% 66% round 0.8rem);
+}
+.header__nav.active {
+    pointer-events: initial;
+    clip-path: inset(0%);
+    transition-duration: 0.3s;
+}
+.navMenu {
+    list-style: none;
+}
+.headerMenu {
+    padding: 0 1rem;
+    font-weight: 500;
+    border-bottom: 0.1rem solid #2E2E2E;
+    opacity: 0;
+    transition: 0.3s ease-out;
+}
+.slideUp:not(.menuOpened) {
+    transform: translateY(calc(-100% - 11rem));
+}
+.slideDown {
+    transform: translateY(0);
+}
+
+.headerMenu>li .subMenu.opened {
+    height: 8.4rem;
+}
+.header__nav.active .headerMenu {
+    opacity: 1;
+    transition-delay: 0.3s;
+}
+.menuItem {
+    margin-bottom: 2.5rem;
+    list-style: none;
+}
+
+.subMenuItem {
+    margin-bottom: 1.2rem;
+    list-style: none;
+}
+.subMenuItem .headerMenuLink {
+    font-size: 1.0rem;
+    text-transform: capitalize;
+    color: #bbb;
+}
+.subMenu {
+    height: 0;
+    overflow: hidden;
+    transition: 0.3s ease-out;
+}
+.subMenu::before {
+    content: '';
+    display: block;
+    height: 1rem;
+}
+.submenuCount {
+    font-weight: 500;
+    font-size: 0.9rem;
+    line-height: 1;
+    color: #999;
+    margin-left: 0.5rem;
+    position: absolute;
+    left: 100%;
+    top: 0;
+}
+.headerMenuLink {
+    width: max-content;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.headerMenuLink:hover {
+    color: #06ffff;
+}
+.headerMenuLink:hover::after {
+    width: 100%;
+}
+.headerMenuLink::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0.1rem;
+    background: currentColor;
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    transition: 0.3s ease-out;
+}
+.menuSocials {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0 1rem;
+    padding-top: 2rem;
+    opacity: 0;
+}
+.header__nav.active .headerMenu, .header__nav.active .menuSocials {
+    opacity: 1;
+    transition-delay: 0.3s;
+}
+.menuSocials__list {
+    display: flex;
+        align-items: center;
+        gap: 1.5rem;
+}
+.menuSocials__item {
+    transition: 0.3s;
+}
+.menuSocials__item:hover {
+    opacity: 0.5;
+}

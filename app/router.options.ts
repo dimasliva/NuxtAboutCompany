@@ -7,6 +7,16 @@ export default {
       name: 'home',
       path: '/',
       component: () => import('~/pages/HomePage/HomePage.vue')
-    }
+    },
+    {
+      name: 'contact',
+      path: '/contact',
+      component: () => import('~/pages/ContactPage/ContactPage.vue')
+    },
+    {
+      name: 'forum',
+      path: '/forum',
+      component: () => import('~/pages/ForumPage/ForumPage.vue')
+    },
   ],
 } satisfies RouterConfig

@@ -1,0 +1,28 @@
+.teamItem {
+    justify-self: center;
+    box-sizing: border-box;
+    aspect-ratio: 335 / 400;
+    display: flex;
+    width: 30.6rem;
+    padding: 2.5rem;
+    border: 0.1rem solid #a7a7ad;
+    color: #bbb;
+    position: relative;
+    z-index: 1;
+    transition: 0.3s ease-out;
+    pointer-events: auto;
+}
+.teamItem::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 45%;
+    background: linear-gradient(to bottom, rgba(5, 5, 6, 0) 0%, #050506 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.teamItem:hover {
+    border: 0.1rem solid #06ffff;
+    color: #06ffff;
+}

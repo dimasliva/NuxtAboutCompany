@@ -1,0 +1,55 @@
+.animTitle.animated {
+    animation-name: anim-title;
+}
+.contactPage__text.animated {
+    animation-name: anim-dflt;
+}
+
+.title {
+    color: #fff;
+    font-size: 4.8rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    transition: color 0.6s ease-out;
+}
+
+.contactPage__text {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+
+.anim {
+    --delay: 0s;
+    --duration: 1.5s;
+    opacity: 0;
+    animation-duration: var(--duration);
+    animation-delay: var(--delay);
+    animation-fill-mode: forwards;
+}
+
+@keyframes anim-title {
+    0% {
+        opacity: 0;
+        transform: translate3d(0px, 30%, 0px) skew(0deg, 4deg);
+        transform-origin: left;
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0px, 0em, 0px) scale3d(1, 1, 1) rotateX(0deg)
+          rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    }
+}
+@keyframes anim-dflt {
+    0% {
+        opacity: 0;
+        transform: translate3d(0px, 3em, 0px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0px, 0rem, 0px);
+    }
+}

@@ -5,7 +5,7 @@
             :style="{ '--delay': `${item.delay}ms` }" ref="logoItem">
             <div class="flex flex-col items-center">
                 <div class="">
-                    <v-img class="ofc" :src="item.image" width="100" height="100"></v-img>
+                    <v-img  :src="item.image" width="100" height="100"></v-img>
                 </div>
 
                 <div :class="isHovering ? 'opacity-100 translate-y-0' : 'translate-y-4' "
@@ -20,7 +20,7 @@
 <script setup lang="ts">
 import styles from "./HomeTechnologyItem.module.scss";
 defineProps(['item']);
-const { onBeforeUnmountHandler, logoItem, isVisible, onMountedHandler } = useHomeTechnologyItem();
+const {isVisible, logoItem, onBeforeUnmountHandler, onMountedHandler} =useAnimation()
 
 onMounted(onMountedHandler);
 onBeforeUnmount(onBeforeUnmountHandler);

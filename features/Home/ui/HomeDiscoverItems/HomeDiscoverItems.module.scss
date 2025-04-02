@@ -1,0 +1,13 @@
+.list {
+    display: flex;
+    width: 120%;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+.list_even {
+    margin-left: -20%;
+}
+.content {
+    overflow: hidden;
+    display: block;
+}
