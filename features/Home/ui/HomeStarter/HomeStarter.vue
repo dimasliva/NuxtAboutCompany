@@ -1,5 +1,5 @@
 <template>
-    <div class="flex mt-40 relative">
+    <div class="flex mt-20 relative">
         <div class="flex-1 flex flex-col gap-32">
             <div class="flex flex-col gap-8">
                 <div class="text-7xl">

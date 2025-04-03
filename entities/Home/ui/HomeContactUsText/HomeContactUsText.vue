@@ -10,17 +10,17 @@
         </h2>
         <div :class="[isVisible2 ? styles.animated : '',
         styles.anim, styles.phrase]" ref="logoItem2">
-            <p class="flex items-center">
+            <div class="flex items-center">
                 <span class="text-gray-500 text-xl">По всем вопросам</span>
-            <div ref="paragraphElement" class="w-[150px]">
-                <span ref="linkElement">
-                    <NuxtLink to="https://siams.com/" target="_blank" :class="[styles.descriptionLink]"
-                        :style="linkStyle">
-                        <span class="text-3xl">ПИШИТЕ</span>
-                    </NuxtLink>
-                </span>
+                <div ref="paragraphElement" class="w-[150px]">
+                    <span ref="linkElement">
+                        <NuxtLink to="https://siams.com/" target="_blank" :class="[styles.descriptionLink]"
+                            :style="linkStyle">
+                            <span class="text-3xl">ПИШИТЕ</span>
+                        </NuxtLink>
+                    </span>
+                </div>
             </div>
-            </p>
         </div>
     </div>
 </template>

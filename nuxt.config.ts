@@ -7,13 +7,11 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  modules: ['@nuxt/eslint', '@nuxtjs/tailwindcss',
-    '@nuxt/fonts',
-
+  modules: [
+    '@nuxt/eslint',
+    '@nuxtjs/tailwindcss',
+    '@pinia/nuxt',
   ],
-
-  css: ['~/shared/assets/styles/global.scss'],
-
   hooks: {
     'vite:extendConfig': (config) => {
       // @ts-expect-error
@@ -25,7 +23,6 @@ export default defineNuxtConfig({
     public: {
     },
   },
-  // https://bato.dev/
   components: [
     {
       path: 'shared',
@@ -62,4 +59,8 @@ export default defineNuxtConfig({
   build: {
     transpile: ['vuetify'],
   },
+  routeRules: {
+    '/': { prerender: true },
+  },
+  
 })

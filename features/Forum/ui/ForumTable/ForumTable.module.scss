@@ -1,0 +1,199 @@
+.topicList {
+    border-collapse: collapse;
+    margin: 0 0 10px;
+    width: 100%;
+    --line-height-large: 1.4;
+    --font-down-1: 16px;
+    --primary-low: #313131;
+    --font-0: 1.05em;
+    --primary-medium: #909090;
+    --font-up-1: 1.1487em;
+}
+
+.trTh {
+    border-bottom: 2px solid var(--primary-low);
+    border-color: rgba(221, 221, 221, .35);
+}
+
+.topicListData:first-of-type {
+    padding: .8em .33em;
+    padding-left: .67em;
+    white-space: nowrap;
+}
+
+.author {
+    padding: 12px;
+}
+
+.views {
+    text-align: center;
+    width: auto;
+    padding: .8em .33em;
+}
+
+.posts {
+    padding-left: .5em;
+    width: auto;
+}
+.topicListData.num {
+    text-align: center;
+}
+.topicListData:last-of-type {
+    padding-right: .67em;
+}
+.topicListData.age {
+    text-align: right;
+}
+.topicListData {
+    line-height: var(--line-height-large);
+    text-align: left;
+    vertical-align: middle;
+    font-size: var(--font-down-1);
+    color: rgba(255, 255, 255, .5);
+    font-weight: normal;
+    transition: color 200ms;
+    padding: .8em 1.33em;
+}
+
+.topicListItem:first-of-type {
+    border-top-width: 1px;
+}
+
+.topicListItem {
+    border-bottom: 1px solid var(--primary-low);
+    cursor: pointer;
+}
+
+.pinned {
+    cursor: pointer;
+    background-color:#1d1f24;
+}
+
+.pinned:hover {
+    background-color:#26282f;
+
+}
+
+.trTd {
+    border-color: rgba(221, 221, 221, .15);
+}
+
+
+.mainLink:first-of-type {
+    padding: .8em .33em;
+    padding-left: .67em;
+    border-left: 1px solid rgba(0, 0, 0, 0);
+    width: 100%;
+    max-width: 0;
+    padding-top: 1.02em;
+    padding-bottom: 1.02em;
+    line-height: var(--line-height-large);
+    text-align: left;
+    vertical-align: middle;
+    color: var(--primary-medium);
+}
+
+
+.authorTd {
+    padding: 12px;
+    color: var(--primary-medium);
+    font-size: var(--font-0);
+}
+
+.linkTopLine {
+    display: flex;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tdTheme {
+    display: block;
+    cursor: pointer;
+    max-width: 90%;
+    white-space: nowrap;
+    color: var(--primary-medium);
+}
+
+.rawLink {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: rgba(255, 255, 255, .8);
+    font-size: inherit;
+    transition: color 200ms;
+    padding: 0;
+    word-break: break-word;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0)
+}
+
+.rawLink:hover {
+    color: #fff;
+    background: none;
+}
+
+.linkBottomLine {
+    font-size: var(--font-down-1);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .5em;
+}
+
+.categoryWrapper {
+    --category-badge-color: #AB9364;
+    --category-badge-text-color: #FFFFFF;
+    color: var(--primary-high);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: var(--font-down-1);
+    white-space: nowrap;
+    position: relative;
+    display: inline-flex;
+    align-items: baseline;
+    text-decoration: none;
+    transition: color 200ms;
+    cursor: pointer;
+}
+
+.categoryName {
+    color: #a6a6a6;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    min-width: 0;
+}
+
+.creatorLink {
+    color: rgba(255, 255, 255, .5);
+    text-decoration: none;
+    transition: color 200ms;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: var(--font-0);
+}
+
+.badgePosts {
+    font-weight: normal;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    line-height: normal;
+    padding: 0;
+    text-decoration: none;
+    transition: color 200ms;
+    cursor: pointer;
+}
+
+.tdWAuto {
+    width: auto;
+}
+.tdNumber {
+    font-size: var(--font-0);
+    text-align: center;
+}
+.postActivity {
+    padding: 15px 5px;
+    text-align: right;
+}

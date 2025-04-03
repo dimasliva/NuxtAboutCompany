@@ -1,7 +1,8 @@
 <template>
     <WidgetPageUiPage>
-        <div class="relative">
-            forum
+        <div class="relative max-w-7xl mx-auto">
+            <FeatureForumUiForumTabs/>
+            <FeatureForumUiForumTable/>
         </div>
     </WidgetPageUiPage>
 </template>

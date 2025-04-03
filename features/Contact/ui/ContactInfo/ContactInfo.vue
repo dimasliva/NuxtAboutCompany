@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-between pt-[12rem] relative w-full">
+    <div class="flex justify-between pt-20 relative w-full">
         <div class="contact-page__info">
 
             <h1 :class="[
