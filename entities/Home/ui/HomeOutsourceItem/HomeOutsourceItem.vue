@@ -8,7 +8,10 @@
 
 <script setup lang="ts">
 import styles from "./HomeOutsourceItem.module.scss"
-const { item } = defineProps(['item']);
+interface IProps {
+    item: IHomeOutsource;
+}
+defineProps<IProps>();
 
 </script>
 

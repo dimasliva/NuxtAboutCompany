@@ -1,11 +1,16 @@
 export const useForumStore = defineStore('forum', {
     state: () => {
-        return { activeTab: ETabs.top }
+        return { 
+            tab: ETabs.top,
+            page: 1,
+         }
     },
     actions: {
-        setActiveTab(tab: ETabs) {
-            console.log('tab', this.activeTab)
-            this.activeTab = tab;
+        setTab(tab: ETabs) {
+            this.tab = tab;
+        },
+        setPage(value: number) {
+            this.page = value;
         },
     },
 });

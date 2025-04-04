@@ -12,5 +12,11 @@
 </template>
 
 <script setup lang="ts">
-defineProps(['text', 'link', 'lineColor', 'hoverText'])
+interface IProps {
+	text: string;
+	link: string;
+	lineColor: string;
+	hoverText: string;
+}
+defineProps<IProps>()
 </script>

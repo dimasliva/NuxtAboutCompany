@@ -1,7 +1,8 @@
 <template>
-    <NuxtLink target="_blank" :to="link" class="relative cursor-pointer overflow-hidden flex items-start gap-2 text-xl" @mouseover="animateIcon" @mouseleave="resetIcon">
+    <NuxtLink target="_blank" :to="link" class="relative cursor-pointer overflow-hidden flex items-start gap-2 text-xl"
+        @mouseover="animateIcon" @mouseleave="resetIcon">
         <span class="text-base mt-1">
-            {{text}}
+            {{ text }}
         </span>
         <div>
             <v-icon :class="iconClass + ' text-sky-500'">mdi-arrow-top-right-thin</v-icon>
@@ -10,7 +11,10 @@
 </template>
 
 <script setup lang="ts">
-
-    const {animateIcon, iconClass, resetIcon} = useHomeLinkArrow()
-    defineProps(["text", "link"])
+interface IProps {
+    text: string;
+    link: string;
+}
+const { animateIcon, iconClass, resetIcon } = useHomeLinkArrow()
+defineProps<IProps>()
 </script>

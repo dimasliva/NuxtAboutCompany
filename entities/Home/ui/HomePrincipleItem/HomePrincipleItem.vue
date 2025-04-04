@@ -35,7 +35,11 @@
 import styles from "./HomePrincipleItem.module.scss";
 import { CircleInSquareHoverIcon, CircleInSquareIcon, CircleWithinCircleHoverIcon, CircleWithinCircleIcon, SquareInCircleHoverIcon, SquareInCircleIcon, TriangleInCircleHoverIcon, TriangleInCircleIcon } from "~/shared/assets/icons";
 
-const { item } = defineProps(['item']);
+interface IProps {
+    item: IHomePrinciple;
+}
+
+const { item } = defineProps<IProps>();
 const { titleCharacters, isFirstCircleIcon } = useHomePrincipleItem(item);
 
 

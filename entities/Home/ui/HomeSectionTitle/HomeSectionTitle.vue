@@ -3,6 +3,9 @@
 </template>
 
 <script setup lang="ts">
-    const {title} = defineProps(["title"])
-    const formattedTitle = title.replace(/<br\s*\/?>/gi, '<br/>');
+interface IProps {
+    title: string;
+}
+const { title } = defineProps<IProps>()
+const formattedTitle = title.replace(/<br\s*\/?>/gi, '<br/>');
 </script>

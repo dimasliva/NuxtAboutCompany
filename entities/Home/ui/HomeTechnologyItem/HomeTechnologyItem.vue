@@ -19,7 +19,10 @@
 
 <script setup lang="ts">
 import styles from "./HomeTechnologyItem.module.scss";
-defineProps(['item']);
+interface IProps {
+    item: IHomeTechnologyImage
+}
+defineProps<IProps>();
 const {isVisible, logoItem, onBeforeUnmountHandler, onMountedHandler} =useAnimation()
 
 onMounted(onMountedHandler);

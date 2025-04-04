@@ -18,5 +18,16 @@ export default {
       path: '/forum',
       component: () => import('~/pages/ForumPage/ForumPage.vue')
     },
+    {
+      name: 'forumTheme',
+      path: '/forum/theme/:id',
+      component: () => import('~/pages/ForumThemePage/ForumThemePage.vue')
+    },
+    {
+      name: 'forumAuthor',
+      path: '/forum/author/:id',
+      component: () => import('~/pages/ForumAuthorPage/ForumAuthorPage.vue')
+    },
+    
   ],
 } satisfies RouterConfig

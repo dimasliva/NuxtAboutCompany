@@ -27,7 +27,12 @@
 import { defineProps, defineEmits } from 'vue';
 import styles from "./HomeServiceItem.module.scss";
 
-const { service, index } = defineProps(["service", "index"]);
+interface IProps {
+    service: IHomeTechnology;
+    index: number;
+}
+
+const { service, index } = defineProps<IProps>();
 const emit = defineEmits(['onOpen']);
 
 function onOpenHandler() {

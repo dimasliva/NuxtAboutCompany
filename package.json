@@ -12,6 +12,7 @@
   "dependencies": {
     "@mdi/font": "^7.4.47",
     "@nuxt/eslint": "^1.2.0",
+    "date-fns": "^4.1.0",
     "eslint": "^9.23.0",
     "nuxt": "^3.16.1",
     "vue": "^3.5.13",
@@ -19,9 +20,11 @@
   },
   "devDependencies": {
     "@nuxt/webpack-builder": "^3.16.2",
+    "@nuxtjs/date-fns": "^1.5.0",
     "@nuxtjs/tailwindcss": "^6.13.2",
     "@pinia/nuxt": "^0.10.1",
     "file-loader": "^6.2.0",
+    "nuxt-storage": "^1.2.2",
     "sass": "^1.86.1",
     "sass-loader": "^16.0.5",
     "url-loader": "^4.1.1",

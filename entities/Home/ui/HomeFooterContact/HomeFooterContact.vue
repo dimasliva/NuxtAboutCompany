@@ -5,13 +5,15 @@
 			<div class="max-w-[25px] max-h-[25px]">
 				<component :is="item.icon" class="w-full h-full" />
 			</div>
-			<HomeFooterTextHover :text="item.contact" :link="item.link" hover-text="text-white" line-color="bg-white"/>
+			<EntityHomeUiHomeFooterTextHover :text="item.contact" :link="item.link" hover-text="text-white" line-color="bg-white"/>
 		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
-import HomeFooterTextHover from '../HomeFooterTextHover/HomeFooterTextHover.vue';
+interface IProps {
+	item: IContact;
+}
 
-defineProps(['item'])
+defineProps<IProps>()
 </script>

@@ -13,8 +13,10 @@
 </template>
 
 <script lang="ts" setup>
-
-const { isOpen } = defineProps(['isOpen'])
+interface IProps {
+    isOpen: boolean;
+}
+const { isOpen } = defineProps<IProps>()
 defineEmits(['onClose']);
 
 const show = computed(() => {

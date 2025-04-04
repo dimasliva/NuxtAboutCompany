@@ -9,8 +9,10 @@
 <script setup lang="ts">
 import { BallIcon } from "~/shared/assets/icons";
 import styles from "./HomeDiscoverItem.module.scss";
-
-defineProps(['item'])
+interface IProps {
+    item: IImageLink;
+}
+defineProps<IProps>()
 const getIcon = () => {
     switch (true) {
         case true:

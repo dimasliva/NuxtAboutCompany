@@ -43,6 +43,7 @@
 }
 .topicListData.age {
     text-align: right;
+    white-space: nowrap;
 }
 .topicListData {
     line-height: var(--line-height-large);
@@ -172,6 +173,10 @@
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0);
     font-size: var(--font-0);
+}
+
+.creatorLink:hover {
+    color: #fff;
 }
 
 .badgePosts {

@@ -1,30 +1,34 @@
-export interface ITechnology {
+export interface IHomeTechnology {
     title: string;
     description: string;
     open: boolean;
     link: string;
 }
-export interface IPrinciple {
+export interface IHomePrinciple {
     title: string;
     description: string;
     icon: string;
 }
-export interface IOutsource {
+export interface IHomeOutsource {
     title: string;
     description: string;
 }
-export interface IPeople {
+export interface IHomePeople {
     name: string;
     proffesion: string;
     image: string
 }
-export interface INumber {
+export interface IHomeNumber {
     number: string;
     title: string;
     delay: number;
 }
 
-
+export interface IHomeTechnologyImage {
+    title: string,
+    image: any,
+    delay: number,
+}
 export enum EPrincipleIcon {
     circle = 'circle',
     triangle = 'triangle',

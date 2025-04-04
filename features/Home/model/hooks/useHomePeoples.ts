@@ -7,7 +7,7 @@ import Denis from "~/shared/assets/Home/images/Denis.png.webp";
 import Tihon from "~/shared/assets/Home/images/Tihon.png.webp";
 
 export const useHomePeoples = () => {
-    const items = reactive<IPeople[]>([
+    const items = reactive<IHomePeople[]>([
         {name: "Виктория", proffesion: "CEO & финансовый директор", image: Viktoria},
         {name: "Ярослав", proffesion: "Менеджер по развитию бизнеса", image: Yaroslav},
         {name: "Антон", proffesion: "РУКОВОДИТЕЛЬ ОТДЕЛА РАЗВИТИЯ", image: Anton},

@@ -9,7 +9,12 @@
 </template>
 <script lang="ts" setup>
 import styles from "./ContactBlock.module.scss"
-defineProps(['title', 'textOne', 'textTwo'])
+interface IProps {
+    title: string;
+    textOne: string;
+    textTwo: string;
+}
+defineProps<IProps>()
 const { isVisible, logoItem, onBeforeUnmountHandler, onMountedHandler } = useAnimation()
 
 onMounted(onMountedHandler);

@@ -19,7 +19,7 @@
                 Давайте поговорим о вашем проекте и о том, как мы можем увеличить доход вашего бизнеса.
             </h2>
             <div class="gap-[50px] pt-[42px] flex flex-wrap justify-start">
-                
+
                 <EntityContactUiContactBlock v-for="block in contactBlocks" :key="block.title" :title="block.title"
                     :text-one="block.textOne" :text-two="block.textTwo" />
 

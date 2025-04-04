@@ -1,7 +1,8 @@
 <template>
     <div class="flex flex-wrap justify-center  gap-[6rem] w-full">
-        <EntityHomeUiHomePeopleItem v-for="(item) in items" :key="item.name" :item="item" />
+        <EntityHomeUiHomePeopleItem v-for="(item) in items" :key="item.name" :item="item" :isMore="false"/>
         <EntityHomeUiHomePeopleItem :isMore="true" />
+
     </div>
 </template>
 

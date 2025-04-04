@@ -21,7 +21,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     ssr: true,
     public: {
-    },
+      apiBase: process.env.NUXT_PUBLIC_API_BASE,
+    }
   },
   components: [
     {
@@ -53,6 +54,11 @@ export default defineNuxtConfig({
       'entities/**/*.ts',
     ],
   },
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth'
+    }
+  },
   typescript: {
     strict: true,
   },
@@ -62,5 +68,5 @@ export default defineNuxtConfig({
   routeRules: {
     '/': { prerender: true },
   },
-  
+
 })

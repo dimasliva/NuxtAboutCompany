@@ -12,8 +12,10 @@
 
 <script setup lang="ts">
 import styles from "./HomeNumbersItem.module.scss";
-
-defineProps(['item'])
+interface IProps {
+    item: IHomeNumber;
+}
+defineProps<IProps>()
 const { isVisible, logoItem, onBeforeUnmountHandler, onMountedHandler } = useAnimation()
 onMounted(onMountedHandler);
 onBeforeUnmount(onBeforeUnmountHandler);

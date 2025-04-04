@@ -16,7 +16,7 @@ import threejs from "~/shared/assets/Home/images/logo-3js.png.webp";
 import jquery from "~/shared/assets/Home/images/logo-jquery.png.webp";
 
 export const useHomeTechnologyItems = () => {
-    const items = reactive([
+    const items = reactive<IHomeTechnologyImage[]>([
         {
             title: "Webflow",
             image: webflow,
