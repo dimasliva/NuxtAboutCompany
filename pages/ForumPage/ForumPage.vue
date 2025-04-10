@@ -2,22 +2,14 @@
     <WidgetPageUiPage>
         <div class="relative max-w-7xl mx-auto">
             <FeatureForumUiForumTabs />
-            <v-tabs-window v-model="tab">
-                <v-tabs-window-item :value="ETabs.top">
-                    <FeatureForumUiForumTable :items="topics" :is-loading="isLoading" />
-                </v-tabs-window-item>
-
-                <v-tabs-window-item :value="ETabs.last">
-                    <FeatureForumUiForumTable :items="topics" :is-loading="isLoading" />
-                </v-tabs-window-item>
-            </v-tabs-window>
+            <FeatureForumUiForumTable :items="topics" :is-loading="isLoading" :is-pending="isPending" />
         </div>
     </WidgetPageUiPage>
 </template>
 
 <script lang="ts" setup>
 import styles from "./ForumPage.module.scss"
-const { topics, tab, isLoading, handleScroll, setPage } = useForum()
+const { topics, tab, isLoading, isPending, handleScroll, setPage } = useForum()
 
 onMounted(() => {
     window.addEventListener('scroll', handleScroll);

@@ -19,6 +19,11 @@ export default {
       component: () => import('~/pages/ForumPage/ForumPage.vue')
     },
     {
+      name: 'docs',
+      path: '/docs',
+      component: () => import('~/pages/DocsPage2/DocsPage.vue')
+    },
+    {
       name: 'forumTheme',
       path: '/forum/theme/:id',
       component: () => import('~/pages/ForumThemePage/ForumThemePage.vue')

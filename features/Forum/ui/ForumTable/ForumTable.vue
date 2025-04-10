@@ -1,100 +1,90 @@
 <template>
-    <div class="flex flex-col items-center relative">
+    <div class="flex flex-col items-center relative min-h-[calc(100vh-128px)]">
 
         <table :class="[styles.topicList]">
             <thead>
                 <tr :class="[styles.trTh]">
                     <th :class="[styles.topicListData]">
-                        <span>
-                            Тема
-                        </span>
+                        <span>Тема</span>
                     </th>
                     <th :class="[styles.topicListData, styles.author]">Автор</th>
                     <th :class="[styles.topicListData, styles.posts]">
-                        <button>
-                            Ответов
-                        </button>
+                        <button>Ответов</button>
                     </th>
                     <th :class="[styles.topicListData, styles.views]">
-                        <button>
-                            Просмотров
-                        </button>
+                        <button>Просмотров</button>
                     </th>
                     <th :class="[styles.topicListData]">
-                        <button>
-                            Активность
-                        </button>
+                        <button>Активность</button>
                     </th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="topic in items" :key="topic.id" :class="[styles.topicListItem, styles.trTd, styles.pinned]"
-                    @click="() => toTheme(topic.id)">
-                    <td :class="[styles.mainLink]">
-                        <span :class="[styles.linkTopLine, styles.topicListData]">
-                            <component v-if="topic.locked" :is="getIcon(ETableIcons.lock)"
-                                class="max-w-[20px] max-h-[14px]" />
-                            <span :class="[styles.tdTheme]">
-                                <NuxtLink :to="{ path: '/forum/theme/' + topic.id }" :class="[styles.rawLink]">
-                                    {{ topic.theme }}
-                                    <v-tooltip activator="parent" location="top">
-                                        <div class="w-80">
-                                            {{ truncateText(topic.theme) }}
-                                        </div>
-                                    </v-tooltip>
-                                </NuxtLink>
+                <template v-if="items.length > 0">
+                    <tr v-for="topic in items" :key="topic.id" :class="[styles.topicListItem, styles.trTd, styles.pinned]"
+                        @click="() => toTheme(topic.id)">
+                        <td :class="[styles.mainLink]">
+                            <span :class="[styles.linkTopLine, styles.topicListData]">
+                                <component v-if="topic.locked" :is="getIcon(ETableIcons.lock)"
+                                    class="max-w-[20px] max-h-[14px]" />
+                                <span :class="[styles.tdTheme]">
+                                    <NuxtLink :to="{ path: '/forum/theme/' + topic.id }" :class="[styles.rawLink]">
+                                        {{ topic.theme }}
+                                        <v-tooltip activator="parent" location="top">
+                                            <div class="w-80">
+                                                {{ truncateText(topic.theme) }}
+                                            </div>
+                                        </v-tooltip>
+                                    </NuxtLink>
+                                </span>
                             </span>
-                        </span>
-                        <div :class="[styles.linkBottomLine]">
-                            <div :class="[styles.categoryWrapper]">
-                                <span :class="[styles.categoryName]">{{ topic.category.name }}</span>
+                            <div :class="[styles.linkBottomLine]">
+                                <div :class="[styles.categoryWrapper]">
+                                    <span :class="[styles.categoryName]">{{ topic.category.name }}</span>
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                    <td :class="[styles.authorTd]">
-                        <div class="creator">
-                            <NuxtLink :class="[styles.creatorLink]" :to="{ path: '/forum/author/' + topic.author.id }">
-                                {{ topic.author.name }}
+                        </td>
+                        <td :class="[styles.authorTd]">
+                            <div class="creator">
+                                <NuxtLink :class="[styles.creatorLink]" :to="{ path: '/forum/author/' + topic.author.id }">
+                                    {{ topic.author.name }}
+                                </NuxtLink>
+                            </div>
+                        </td>
+                        <td :class="[styles.topicListData, styles.tdWAuto]">
+                            <NuxtLink :to="`/en/blizzard/t/${topic.theme.replace(/\s+/g, '-').toLowerCase()}/`"
+                                :class="[styles.badgePosts]">
+                                <component :is="getIcon(ETableIcons.message)" class="max-w-[20px] max-h-[14px]" />
+                                <span class="number">{{ topic.replies }}</span>
                             </NuxtLink>
-                        </div>
-                    </td>
-                    <td :class="[styles.topicListData, styles.tdWAuto]">
-                        <NuxtLink :to="`/en/blizzard/t/${topic.theme.replace(/\s+/g, '-').toLowerCase()}/`"
-                            :class="[styles.badgePosts]">
-                            <component :is="getIcon(ETableIcons.message)" class="max-w-[20px] max-h-[14px]" />
-                            <span class="number">{{ topic.replies }}</span>
-                        </NuxtLink>
-                    </td>
-                    <td :class="[styles.topicListData, styles.num, styles.tdWAuto]">
-                        <span :class="[styles.tdNumber, topic.views > 50 ? 'text-orange-500' : '']"
-                            title="this topic has been viewed {{ topic.views }} times">
-                            {{ topic.views < 1000 ? topic.views : (topic.views / 1000).toFixed(1) }}{{ topic.views < 1000
-                                ? '' : 'k' }} </span>
-
-
-                    </td>
-
-
-                    <td title="Created: Nov 15, 2024 6:06 am Latest: Mar 21, 2025 2:23 am"
-                        :class="[styles.topicListData, styles.age]">
-                        <NuxtLink :to="`/en/blizzard/t/${topic.theme.replace(/\s+/g, '-').toLowerCase()}/`"
-                            :class="[styles.postActivity]">
-                            <span class="relative-date">{{ formatDistanceToNow(topic.activity, {
-                                locale: ru, addSuffix:
-                                    true
-                            }) }}</span>
-                        </NuxtLink>
-                    </td>
-
-
-                </tr>
-
+                        </td>
+                        <td :class="[styles.topicListData, styles.num, styles.tdWAuto]">
+                            <span :class="[styles.tdNumber, topic.views > 50 ? 'text-orange-500' : '']"
+                                title="this topic has been viewed {{ topic.views }} times">
+                                {{ topic.views < 1000 ? topic.views : (topic.views / 1000).toFixed(1) }} {{ topic.views < 1000 ? '' : 'k' }} 
+                            </span>
+                        </td>
+                        <td title="Created: Nov 15, 2024 6:06 am Latest: Mar 21, 2025 2:23 am"
+                            :class="[styles.topicListData, styles.age]">
+                            <span :class="[styles.postActivity]">
+                                {{ formatDistanceToNow(topic.activity, { locale: ru, addSuffix: true }) }}
+                            </span>
+                        </td>
+                    </tr>
+                </template>
+                <template v-else>
+                    <tr>
+                        <td colspan="5" class="text-center py-4">
+                            <span class="text-gray-500">Данные отсутствуют</span>
+                        </td>
+                    </tr>
+                </template>
             </tbody>
         </table>
         <WidgetLoader v-if="isLoading" class="absolute bottom-0" />
-
+        <WidgetLoader v-if="isPending" class="absolute -bottom-52" />
+        
     </div>
-
 </template>
 
 <script lang="ts" setup>
@@ -105,7 +95,8 @@ import { ru } from 'date-fns/locale';
 
 interface IProps {
     items: IForumTableTopic[]
-    isLoading: boolean
+    isLoading: boolean;
+    isPending: boolean;
 }
 defineProps<IProps>()
 

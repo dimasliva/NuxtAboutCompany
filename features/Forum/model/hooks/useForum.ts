@@ -16,7 +16,7 @@ export const useForum = () => {
 
     isLoading.value = false;
   };
-  const { data } = useAPI<IForumResponse>(useApiConfig().API_URL.forum('themes'), {
+  const { data, status } = useAPI<IForumResponse>(useApiConfig().API_URL.forum('themes'), {
     params: {
       page,
       tab
@@ -26,6 +26,10 @@ export const useForum = () => {
   if (data.value) {
     onResponse(data.value)
   }
+
+  const isPending = computed(() => {
+    return status.value === 'pending' 
+  })
 
   const handleScroll = () => {
     const bottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 400;
@@ -48,5 +52,6 @@ export const useForum = () => {
     onResponse,
     isLoading,
     setPage,
+    isPending,
   };
 };

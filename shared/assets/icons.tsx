@@ -2,6 +2,8 @@ interface IIconSvgProps {
   size?: number;
   width?: number;
   height?: number;
+  class?: string;
+
 }
 
 export const ClutchTextIcon = ({
@@ -129,6 +131,26 @@ export const CodepenCircleIcon = ({
       {...props} width={size || width} height={size || height} viewBox="0 0 42 42" fill="none"><rect x="1" y="1" width="40" height="40" rx="20" stroke="#666666" stroke-width="0.5"></rect><path d="M29.0952 22.2158L27.1905 20.9006L29.0952 19.4494V22.2158ZM25.6032 19.7215L21.9751 17.1365V12.9188L28.4603 17.4993L25.6032 19.7215ZM20.9773 23.2136L17.9841 20.9006L20.9773 18.7691L23.9705 20.9006L20.9773 23.2136ZM20.0249 17.1365L16.3968 19.7215L13.5397 17.5446L20.0249 12.9641V17.1365ZM12.9048 19.4494L14.8095 20.9006L12.9048 22.2158V19.4494ZM16.3515 22.0798L20.0249 24.8916V29.0186L13.5397 24.0752L16.3515 22.0798ZM21.9297 24.8916L25.6032 22.0798L28.415 24.0752L21.9297 29.0186V24.8916ZM20.2517 10.3338L11.5442 16.6376C11.2268 16.8644 11 17.2725 11 17.6807V24.0299C11 24.4381 11.1814 24.8009 11.4989 25.073L20.2064 31.7396C20.6599 32.1025 21.2948 32.1025 21.7937 31.7396L30.5011 25.073C30.8186 24.8462 31 24.4381 31 24.0299V17.6807C31 17.2725 30.8186 16.8644 30.4558 16.6376L21.7483 10.3338C21.2948 10.0163 20.7052 10.0163 20.2517 10.3338Z" fill="white"></path></svg>
   );
 };
+
+export const CheckMarkIcon = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}: IIconSvgProps) => {
+  return (
+    <svg
+      {...props} width={size || width} height={size || height}
+      data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32" role="presentation" data-testid="CheckmarkIcon" color="currentColor">
+      <path fill="currentColor"
+        d="M26.737 2L12.786 21.945 4.047 15.82.5 20.394 14.204 30 31.5 5.274 26.737 2z">
+      </path>
+    </svg>
+  );
+};
+
+
 
 export const MessageIcon = ({
   size = 24,
